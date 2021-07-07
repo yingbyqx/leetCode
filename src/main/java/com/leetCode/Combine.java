@@ -27,22 +27,22 @@ public class Combine {
     public List<List<Integer>> combine(int n, int k) {
         List<List<Integer>> result = new ArrayList<>();
         boolean[] hasUsed = new boolean[n];
-        backtrace(result, new ArrayList<>(), n, 1, k, hasUsed);
+        backtrace(result, new ArrayList<>(), n, 1, k);
         return result;
     }
 
     public void backtrace(List<List<Integer>> result, List<Integer> tmpList,
-                          int n, int index, int target, boolean[] hasUsed) {
+                          int n, int index, int target) {
         if (tmpList.size() == target) {
             result.add(new ArrayList<>(tmpList));
             return;
         }
-        for (int i = index; i < n + 1 && !hasUsed[i - 1]; i++) {
-            hasUsed[i - 1] = true;
+        for (int i = index; i < n + 1; i++) {
+//            hasUsed[i - 1] = true;
             tmpList.add(i);
-            backtrace(result, tmpList, n, index + 1, target, hasUsed);
+            backtrace(result, tmpList, n,  i + 1, target);
             tmpList.remove(tmpList.size() - 1);
-            hasUsed[i - 1] = false;
+//            hasUsed[i - 1] = false;
         }
     }
 

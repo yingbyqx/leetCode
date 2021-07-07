@@ -4,13 +4,13 @@ import java.util.Arrays;
 
 public class QuickSort {
 
-    public static void sort(int[] a, int low, int hight) {
+    public static void sort(int[] a, int low, int high) {
         int i, j, index;
-        if (low > hight) {
+        if (low > high) {
             return;
         }
         i = low;
-        j = hight;
+        j = high;
         index = a[i];  // 用子表的第一个记录做基准
         while (i < j) { // 从表的两端交替向中间扫描
             while (i < j && index < a[j]) j--;
@@ -23,7 +23,7 @@ public class QuickSort {
         }
 
         sort(a, low, i - 1); // 对低子表进行递归排序
-        sort(a, i + 1, hight); // 对高子表进行递归排序
+        sort(a, i + 1, high); // 对高子表进行递归排序
 
     }
 

@@ -68,6 +68,7 @@ public class ThreadTest2 {
         B.start();
         C.start();
         D.start();
+
     }
 
 }
