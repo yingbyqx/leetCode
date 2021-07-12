@@ -65,6 +65,7 @@ public class 雪糕的最大数量 {
         Arrays.sort(costs);
         int maxCount = backtrace(result, tmpList, costs, coins, 0, 0);
         System.out.println(result);
+        System.out.println(result.size());
         return maxCount;
     }
 
